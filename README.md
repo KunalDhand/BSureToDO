@@ -10,8 +10,7 @@ Welcome to BSure To-Do, a feature-rich to-do list app for Android that helps you
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-*Add any additional screenshots here.*
+For screenshots and video tutorials head towards [Screenshots Folder](https://github.com/kunaldhand/BSureToDO/tree/master/screenshots)
 
 ## Getting Started
 
@@ -27,17 +26,6 @@ If you'd like to contribute to this project, feel free to open an issue or submi
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Special thanks to BharatIntern for providing the internship challenge and learning opportunities.
-- Thanks to the Android development community for inspiration and support.
-
-## Contact
-
-For any inquiries or feedback, feel free to reach out:
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-linkedin-profile/)
+This project is licensed under the [MIT License](https://mit-license.org/).
 
 Happy task managing! 🚀

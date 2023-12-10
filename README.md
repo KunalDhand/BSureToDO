@@ -14,7 +14,11 @@ For screenshots and video tutorials head towards [Screenshots Folder](https://gi
 
 ## APK File
 
-Download the latest build [BSure To-Do App](https://github.com/kunaldhand/BSureToDO/blob/master/app/release/app-release.apk) from here
+Download the latest build [BSure To-Do App](https://github.com/kunaldhand/BSureToDO/blob/master/app/release/app-release.apk) from here.
+
+## Previous Versions
+
+For other previous versions head to the [Releases](https://github.com/kunaldhand/BSureToDO/releases) Folder.
 
 ## Getting Started
 

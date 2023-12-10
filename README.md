@@ -4,13 +4,17 @@ Welcome to BSure To-Do, a feature-rich to-do list app for Android that helps you
 
 ## Features
 
+- **Simple User Design:** Quickly manage tasks with the simple design and yet great to work with😊.
 - **Swipe Gestures:** Easily edit and delete tasks with swipe gestures.
-- **Floating Action Button:** Quickly add new tasks with the floating action button at the bottom right corner.
 - **Persistent Storage:** Your tasks persist even when you close the app, thanks to Room database integration.
 
 ## Screenshots
 
 For screenshots and video tutorials head towards [Screenshots Folder](https://github.com/kunaldhand/BSureToDO/tree/master/screenshots)
+
+## APK File
+
+Download the latest build [BSure To-Do App]{https://github.com/kunaldhand/BSureToDO/blob/master/app/release/app-release.apk) from here
 
 ## Getting Started
 

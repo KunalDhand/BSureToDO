@@ -11,23 +11,24 @@ import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import bsuretodo.Adapters.ToDoAdapter;
-import bsuretodo.Model.ToDoModel;
+import bsuretodo.Adapters.TaskItemTouchAdapter;
+import bsuretodo.Adapters.TaskAdapter;
+import bsuretodo.Model.TaskModel;
 import bsuretodo.Utils.DatabaseHandler;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements DialogCloseListener{
+public class MainActivity extends AppCompatActivity implements DialogListener {
 
     private DatabaseHandler db;
 
     private RecyclerView tasksRecyclerView;
-    private ToDoAdapter tasksAdapter;
+    private TaskAdapter tasksAdapter;
     private FloatingActionButton fab;
 
-    private List<ToDoModel> taskList;
+    private List<TaskModel> taskList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
         tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        tasksAdapter = new ToDoAdapter(db,MainActivity.this);
+        tasksAdapter = new TaskAdapter(db,MainActivity.this);
         tasksRecyclerView.setAdapter(tasksAdapter);
 
         ItemTouchHelper itemTouchHelper = new
-                ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
+                ItemTouchHelper(new TaskItemTouchAdapter(tasksAdapter));
         itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
 
         fab = findViewById(R.id.fab);
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
+                AddingNewTask.newInstance().show(getSupportFragmentManager(), AddingNewTask.TAG);
             }
         });
     }

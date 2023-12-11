@@ -19,12 +19,12 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import bsuretodo.Model.ToDoModel;
+import bsuretodo.Model.TaskModel;
 import bsuretodo.Utils.DatabaseHandler;
 
 import java.util.Objects;
 
-public class AddNewTask extends BottomSheetDialogFragment {
+public class AddingNewTask extends BottomSheetDialogFragment {
 
     public static final String TAG = "ActionBottomDialog";
     private EditText newTaskText;
@@ -32,8 +32,8 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
     private DatabaseHandler db;
 
-    public static AddNewTask newInstance(){
-        return new AddNewTask();
+    public static AddingNewTask newInstance(){
+        return new AddingNewTask();
     }
 
     @Override
@@ -105,7 +105,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
                     db.updateTask(bundle.getInt("id"), text);
                 }
                 else {
-                    ToDoModel task = new ToDoModel();
+                    TaskModel task = new TaskModel();
                     task.setTask(text);
                     task.setStatus(0);
                     db.insertTask(task);
@@ -118,7 +118,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
     @Override
     public void onDismiss(@NonNull DialogInterface dialog){
         Activity activity = getActivity();
-        if(activity instanceof DialogCloseListener)
-            ((DialogCloseListener)activity).handleDialogClose(dialog);
+        if(activity instanceof DialogListener)
+            ((DialogListener)activity).handleDialogClose(dialog);
     }
 }

@@ -1,6 +1,6 @@
 package bsuretodo.Model;
 
-public class ToDoModel {
+public class TaskModel {
     private int id, status;
     private String task;
 

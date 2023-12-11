@@ -1,4 +1,4 @@
-package bsuretodo;
+package bsuretodo.Adapters;
 
 import android.content.DialogInterface;
 import android.graphics.Canvas;
@@ -13,13 +13,13 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import bsuretodo.Adapters.ToDoAdapter;
+import bsuretodo.R;
 
-public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
+public class TaskItemTouchAdapter extends ItemTouchHelper.SimpleCallback {
 
-    private ToDoAdapter adapter;
+    private TaskAdapter adapter;
 
-    public RecyclerItemTouchHelper(ToDoAdapter adapter) {
+    public TaskItemTouchAdapter(TaskAdapter adapter) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
     }

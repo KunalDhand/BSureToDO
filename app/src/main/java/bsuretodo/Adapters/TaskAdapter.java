@@ -11,21 +11,21 @@ import android.widget.CompoundButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import bsuretodo.AddNewTask;
+import bsuretodo.AddingNewTask;
 import bsuretodo.MainActivity;
-import bsuretodo.Model.ToDoModel;
+import bsuretodo.Model.TaskModel;
 import bsuretodo.R;
 import bsuretodo.Utils.DatabaseHandler;
 
 import java.util.List;
 
-public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
-    private List<ToDoModel> todoList;
+    private List<TaskModel> todoList;
     private DatabaseHandler db;
     private MainActivity activity;
 
-    public ToDoAdapter(DatabaseHandler db, MainActivity activity) {
+    public TaskAdapter(DatabaseHandler db, MainActivity activity) {
         this.db = db;
         this.activity = activity;
     }
@@ -42,7 +42,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         db.openDatabase();
 
-        final ToDoModel item = todoList.get(position);
+        final TaskModel item = todoList.get(position);
         holder.task.setText(item.getTask());
         holder.task.setChecked(toBoolean(item.getStatus()));
         holder.task.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -70,26 +70,26 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         return activity;
     }
 
-    public void setTasks(List<ToDoModel> todoList) {
+    public void setTasks(List<TaskModel> todoList) {
         this.todoList = todoList;
         notifyDataSetChanged();
     }
 
     public void deleteItem(int position) {
-        ToDoModel item = todoList.get(position);
+        TaskModel item = todoList.get(position);
         db.deleteTask(item.getId());
         todoList.remove(position);
         notifyItemRemoved(position);
     }
 
     public void editItem(int position) {
-        ToDoModel item = todoList.get(position);
+        TaskModel item = todoList.get(position);
         Bundle bundle = new Bundle();
         bundle.putInt("id", item.getId());
         bundle.putString("task", item.getTask());
-        AddNewTask fragment = new AddNewTask();
+        AddingNewTask fragment = new AddingNewTask();
         fragment.setArguments(bundle);
-        fragment.show(activity.getSupportFragmentManager(), AddNewTask.TAG);
+        fragment.show(activity.getSupportFragmentManager(), AddingNewTask.TAG);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

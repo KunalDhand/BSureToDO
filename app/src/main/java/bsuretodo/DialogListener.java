@@ -2,6 +2,6 @@ package bsuretodo;
 
 import android.content.DialogInterface;
 
-public interface DialogCloseListener {
+public interface DialogListener {
     public void handleDialogClose(DialogInterface dialog);
 }
